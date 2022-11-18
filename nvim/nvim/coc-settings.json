@@ -1,0 +1,25 @@
+{
+	"suggest.noselect": true,
+	"suggest.enablePreselect": false,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"json"
+	],
+	"translator.toLang": "zh_CN",
+	"translator.enableHover": false,
+	"translator.engines": [
+		"youdao",
+		"bing"
+	],
+	"translator.window.maxWidth": 80,
+	"translator.window.maxHeight": 20,
+	"clangd.enabled": true,
+	"clangd.arguments": [],
+	"clangd.checkUpdates": false,
+	"clangd.disableCompletion": false,
+	"clangd.disableDiagnostics": false,
+	"clangd.disableSnippetCompletion": false,
+	"clangd.disableProgressNotifications": false,
+	"clangd.compilationDatabasePath": "",
+	"clangd.fallbackFlags": [],
+	"coc.preferences.extensionUpdateCheck": "daily"
+}
