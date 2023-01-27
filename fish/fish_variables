@@ -4,6 +4,7 @@ SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gc:git\x20commit
 SETUVAR _fish_abbr_gl:git\x20log\x20\x2d\x2dall\x20\x2d\x2dgraph\x20\x2d\x2ddecorate
+SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

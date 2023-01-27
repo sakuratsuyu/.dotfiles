@@ -1,0 +1,17 @@
+require("base")
+require("keymaps")
+require("color")
+require("plugins")
+
+-- plugins --
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.lspkind")
+require("plugins.snip")
+require("plugins.treesitter")
+require("plugins.telescope")
+require("plugins.startify")
+require("plugins.undotree")
+require("plugins.sandwich")
+require("plugins.multi-cursor")
+require("plugins.easymotion")

@@ -42,10 +42,10 @@ exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1920x0 --rota
 exec_always sleep 1
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always feh --bg-fill ~/Pictures/screen/background.png
-exec_always picom -b --config ~/.config/picom.conf --experimental-backends
+exec_always picom -b --config ~/.config/picom.conf
 # exec_always xmodmap ~/.config/xmodmap.conf
 # exec_always autokey-gtk
-exec_always thunderbird
+# exec_always thunderbird
 exec_always goldendict
 exec_always fcitx5
 exec_always fusuma
@@ -285,7 +285,7 @@ mode "open" {
 		bindsym w exec wechat-uos; mode "default"
 		bindsym d exec dingtalk; mode "default"
 		bindsym v exec microsoft-edge-stable 127.0.0.1:2017; mode "default"
-		bindsym x exec xflux -g 120 -l 30 mode "default"
+		bindsym x exec xflux -g 120 -l 30; mode "default"
 
         # back to normal: Enter or Escape or $mod+o
         bindsym Return mode "default"
@@ -310,7 +310,7 @@ mode "power" {
 assign [class="Microsoft-edge"] $ws2
 # assign [class="GoldenDict"] $ws4
 assign [class="Typora"] $ws3
-assign [class="icalingua"] $ws9
+assign [class="QQ"] $ws9
 assign [class="weixin"] $ws9
 assign [class="dingtalk"] $ws9
 assign [class="thunderbird"] $ws10
