@@ -299,7 +299,7 @@ mode "power" {
 		bindsym l exec i3lock; mode "default"
 		bindsym s exec i3lock && systemctl suspend; mode "default"
 		bindsym c exec i3-msg exit
-		bindsym r exec reboot
+		# bindsym r exec reboot
 
         # back to normal: Enter or Escape or $mod+o
         bindsym Return mode "default"
