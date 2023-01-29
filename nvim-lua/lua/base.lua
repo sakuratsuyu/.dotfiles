@@ -17,7 +17,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.mouse = "a"
-vim.opt.clipboard:append ("unnamedplus")
+vim.opt.clipboard:append ("unnamedplus") -- set clipboard+=unnamedplus
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
