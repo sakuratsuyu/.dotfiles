@@ -36,10 +36,10 @@ BatchifyKeymap({
     { 'n', 'S', ':w<CR>', { noremap = true } },
 
     -- Indentation
-    { 'v', '<', '<V', { noremap = true } },
-    { 'v', '>', '>V', { noremap = true } },
-    { 'v', '<S-TAB>', '<V', { noremap = true } },
-    { 'v', '<TAB>', '>V', { noremap = true } },
+    { 'v', '<', '<gv', { noremap = true } },
+    { 'v', '>', '>gv', { noremap = true } },
+    { 'v', '<S-TAB>', '<gv', { noremap = true } },
+    { 'v', '<TAB>', '>gv', { noremap = true } },
 
     -- Split Buffer
     { 'n', 's', '<nop>', {} },
