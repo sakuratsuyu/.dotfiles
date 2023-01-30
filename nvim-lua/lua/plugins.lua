@@ -1,5 +1,6 @@
 -- Create Command for packer.nvim
 local create_cmd = vim.api.nvim_create_user_command
+
 create_cmd('PackerInstall', function()
     vim.cmd([[packadd packer.nvim]])
     require('plugins').install()
@@ -40,7 +41,6 @@ local packer_bootstrap = ensure_packer()
 
 
 -- Packer Config
-
 local packer = nil
 
 local function InitPacker()
@@ -110,12 +110,14 @@ local function InitPacker()
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
+
     -- CMP
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
+
     -- SNIPPETS
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
@@ -128,6 +130,10 @@ local function InitPacker()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end,
+    }
+    use {
+        'nvim-treesitter/playground',
+        after = 'nvim-treesitter'
     }
 
     -- TELESCOPE
@@ -147,17 +153,22 @@ local function InitPacker()
     use 'kyazdani42/nvim-web-devicons'
 
     -- AUTO-PAIRS
-    use 'jiangmiao/auto-pairs'
+    use { 'jiangmiao/auto-pairs' }
+
     -- UNDOTREE
-    use 'mbbill/undotree'
+    use { 'mbbill/undotree' , event = 'BufRead'}
+
     -- MULTIPLE CURSORS
-    use 'mg979/vim-visual-multi'
+    use { 'mg979/vim-visual-multi', event = 'CursorHold' }
+
     -- SURROUNDING
-    use 'machakann/vim-sandwich'
+    use { 'machakann/vim-sandwich' }
+
     -- TABLE MODE
-    use 'dhruvasagar/vim-table-mode'
+    use { 'dhruvasagar/vim-table-mode' }
+
     -- EASYMOTION
-    use 'easymotion/vim-easymotion'
+    use { 'easymotion/vim-easymotion' }
 
 end
 

@@ -1,3 +1,3 @@
 local keymap = vim.keymap
 
-keymap.set("", "<Leader>", "<Plug>(easymotion-prefix)")
+keymap.set('n', '<Leader>', '<Plug>(easymotion-prefix)')

@@ -66,8 +66,8 @@ BatchifyKeymap({
   
     -- Tab
     { 'n', 'tu', ':tabnew<CR>', { noremap = true } },
-    { 'n', '<C-S-LEFT>', ':tabprev<CR>', { noremap = true } },
-    { 'n', '<C-S-RIGHT>', ':tabnext<CR>', { noremap = true } },
+    { 'n', '<C-h>', ':tabprev<CR>', { noremap = true } },
+    { 'n', '<C-l>', ':tabnext<CR>', { noremap = true } },
  
     -- Spell Check
     { 'n', '<LEADER>sp', ':set spell!<CR>', { noremap = true } },

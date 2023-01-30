@@ -53,7 +53,7 @@ exec_always cbatticon
 exec_always nm-applet
 exec_always blueman-applet
 exec_always pasystray
-exec_always sleep 1 && copyd
+exec_always sleep 1 && copyq
 exec_always sleep 1 && flameshot
 
 # Start XDG autostart .desktop files using dex. See also
@@ -73,8 +73,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec amixer set Master playback 1300+
 bindsym XF86AudioLowerVolume exec amixer set Master playback 1300-
+bindsym XF86AudioRaiseVolume exec amixer set Master playback 1300+
+bindsym $mod+F1 exec amixer set Master toggle
+bindsym $mod+F2 exec amixer set Master playback 1300-
+bindsym $mod+F3 exec amixer set Master playback 1300+
 
 # Use light to adjust Lightness
 bindsym XF86MonBrightnessUp exec light -A 5
@@ -310,10 +313,13 @@ mode "power" {
 assign [class="Microsoft-edge"] $ws2
 # assign [class="GoldenDict"] $ws4
 assign [class="Typora"] $ws3
-assign [class="QQ"] $ws9
+# assign [class="QQ"] $ws9
 assign [class="weixin"] $ws9
 assign [class="dingtalk"] $ws9
 assign [class="thunderbird"] $ws10
+
+for_window [class="QQ"] floating enable
+for_window [class="QQ"] sticky enable
 
 for_window [class="GoldenDict"] floating enable
 for_window [class="GoldenDict"] sticky enable

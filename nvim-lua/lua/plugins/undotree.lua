@@ -1,10 +1,15 @@
-vim.keymap.set("n", "<M-u>", "<Cmd>UndotreeToggle<CR>")
+local keymap = vim.keymap
+local fn = vim.fn
+local cmd = vim.api.nvim_command
 
-os.execute('mkdir -p ~/.config/nvim/tmp/backup')
-os.execute('mkdir -p ~/.config/nvim/tmp/undo')
-vim.api.nvim_command('set backupdir=~/.config/nvim/tmp/backup')
-vim.api.nvim_command('set directory=~/.config/nvim/tmp/backup')
-if vim.fn.has('persistent_undo') then
+keymap.set("n", "<M-u>", ":UndotreeToggle<CR>")
+keymap.set("v", "<M-u>", ":UndotreeToggle<CR>")
+
+fn.system('mkdir -p ~/.config/nvim/tmp/backup')
+fn.system('mkdir -p ~/.config/nvim/tmp/undo')
+cmd('set backupdir=~/.config/nvim/tmp/backup')
+cmd('set directory=~/.config/nvim/tmp/backup')
+if fn.has('persistent_undo') then
 	vim.opt.undofile = true
-    vim.api.nvim_command('set undodir=~/.config/nvim/tmp/undo')
+    cmd('set undodir=~/.config/nvim/tmp/undo')
 end
