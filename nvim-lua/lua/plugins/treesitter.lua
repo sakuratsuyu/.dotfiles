@@ -1,10 +1,11 @@
 local keymap = vim.keymap
+local opt = { noremap = true, silent = true }
 
-keymap.set('n', '<M-g>', ':TSPlaygroundToggle<CR>')
-keymap.set('v', '<M-g>', ':TSPlaygroundToggle<CR>')
-keymap.set('i', '<M-g>', '<ESC>:TSPlaygroundToggle<CR>a')
+keymap.set('n', '<M-g>', ':TSPlaygroundToggle<CR>', opt)
+keymap.set('v', '<M-g>', ':TSPlaygroundToggle<CR>', opt)
+keymap.set('i', '<M-g>', '<ESC>:TSPlaygroundToggle<CR>a', opt)
 
-keymap.set('n', '<M-c>', ':TSHighlightCapturesUnderCursor<CR>')
+keymap.set('n', '<M-c>', ':TSHighlightCapturesUnderCursor<CR>', opt)
 
 -- [[
 -- e.g. For `false`, from `:TSHighlightCapturesUnderCursor<CR>`, we know it's @boolean. 

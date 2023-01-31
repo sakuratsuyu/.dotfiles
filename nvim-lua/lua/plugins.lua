@@ -46,25 +46,16 @@ local packer = nil
 local function InitPacker()
     if packer == nil then
         packer = require('packer')
-        packer.init {
+        packer.init({
             disable_commands = true,
             display = {
                 -- Floating Window Config
                 open_fn = function()
-                  local result, win, buf = require('packer.util').float {
-                    border = {
-                      { '╭', 'FloatBorder' },
-                      { '─', 'FloatBorder' },
-                      { '╮', 'FloatBorder' },
-                      { '│', 'FloatBorder' },
-                      { '╯', 'FloatBorder' },
-                      { '─', 'FloatBorder' },
-                      { '╰', 'FloatBorder' },
-                      { '│', 'FloatBorder' },
-                    },
-                  }
-                  vim.api.nvim_win_set_option(win, 'winhighlight', 'NormalFloat:Normal')
-                  return result, win, buf
+                    local result, win, buf = require('packer.util').float({
+                        border = 'solid'
+                    })
+                    vim.api.nvim_win_set_option(win, 'winhighlight', 'NormalFloat:Normal')
+                    return result, win, buf
                 end,
 
                 -- Symbols
@@ -77,15 +68,15 @@ local function InitPacker()
 
                 -- Keybindings for the display window
                 keybindings = {
-                      quit = 'q',
-                      toggle_update = 'u', -- only in preview
-                      continue = 'c', -- only in preview
-                      toggle_info = '<CR>',
-                      diff = 'd',
-                      prompt_revert = 'r',
+                    quit = '<ESC>',
+                    toggle_update = 'u', -- only in preview
+                    continue = 'c', -- only in preview
+                    toggle_info = '<CR>',
+                    diff = 'd',
+                    prompt_revert = 'r',
                 }
             },
-        }
+        })
     end
 
     packer.reset()
@@ -107,21 +98,22 @@ local function InitPacker()
     use { 'mg979/vim-xtabline' }
 
     -- LSP
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'neovim/nvim-lspconfig'
+    use { 'williamboman/mason.nvim' }
+    use { 'williamboman/mason-lspconfig.nvim' }
+    use { 'neovim/nvim-lspconfig' }
 
     -- CMP
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-buffer' } -- ?
+    use { 'hrsh7th/cmp-path' }
+    use { 'hrsh7th/cmp-cmdline' }
+    use { 'saadparwaiz1/cmp_luasnip' }
+    use { "mtoohey31/cmp-fish", ft = "fish" }
+    use { 'onsails/lspkind-nvim' }
 
     -- SNIPPETS
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'onsails/lspkind-nvim'
+    use { 'L3MON4D3/LuaSnip' }
 
     -- TREESITTER
     use {
@@ -139,27 +131,22 @@ local function InitPacker()
     -- TELESCOPE
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
         requires = {
             "nvim-lua/plenary.nvim", -- Lua development module
-            "BurntSushi/ripgrep", -- characters finding
-            "sharkdp/fd" -- file search
-        },
-        config = function()
-            require('telescope').setup{}
-        end
+        }
     }
-    use 'nvim-telescope/telescope-file-browser.nvim'
-    use 'kyazdani42/nvim-web-devicons'
+    use { 'nvim-telescope/telescope-file-browser.nvim' }
+    use { 'kyazdani42/nvim-web-devicons' }
 
     -- AUTO-PAIRS
-    use { 'jiangmiao/auto-pairs' }
+    -- use { 'jiangmiao/auto-pairs' }
+    use { "windwp/nvim-autopairs" }
 
     -- UNDOTREE
-    use { 'mbbill/undotree' , event = 'BufRead'}
+    use { 'mbbill/undotree' }
 
     -- MULTIPLE CURSORS
-    use { 'mg979/vim-visual-multi', event = 'CursorHold' }
+    use { 'mg979/vim-visual-multi' }
 
     -- SURROUNDING
     use { 'machakann/vim-sandwich' }

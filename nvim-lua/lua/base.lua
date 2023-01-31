@@ -13,17 +13,17 @@ vim.opt.sidescrolloff = 5
 
 -- Fold
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/nvim-treesitter'
--- if vim.fn.empty(vim.fn.glob(install_path)) <= 0 then
---     vim.cmd([[
---         set foldmethod=expr
---         set foldexpr=nvim_treesitter#foldexpr()
---         set nofoldenable
---     ]])
---     -- Disable folding at startup.
--- else 
-    vim.opt.foldmethod = 'indent'
-    vim.opt.foldlevel = 99
--- end
+if vim.fn.empty(vim.fn.glob(install_path)) <= 0 then
+    vim.cmd([[
+        set foldmethod=expr
+        set foldexpr=nvim_treesitter#foldexpr()
+        set nofoldenable
+    ]])
+    -- Disable folding at startup.
+else 
+ vim.opt.foldmethod = 'indent'
+ vim.opt.foldlevel = 99
+end
 
 -- Search
 vim.opt.hlsearch = true
