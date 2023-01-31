@@ -303,7 +303,7 @@ mode "power" {
 		bindsym l exec i3lock; mode "default"
 		bindsym s exec i3lock && systemctl suspend; mode "default"
 		bindsym c exec i3-msg exit
-		# bindsym r exec reboot
+		bindsym r exec systemctl reboot
 
         # back to normal: Enter or Escape or $mod+o
         bindsym Return mode "default"
@@ -315,12 +315,13 @@ assign [class="Microsoft-edge"] $ws2
 # assign [class="GoldenDict"] $ws4
 assign [class="Typora"] $ws3
 # assign [class="QQ"] $ws9
+assign [class="icalingua"] $ws9
 assign [class="weixin"] $ws9
 assign [class="dingtalk"] $ws9
 assign [class="thunderbird"] $ws10
 
-for_window [class="QQ"] floating enable
-for_window [class="QQ"] sticky enable
+# for_window [class="QQ"] floating enable
+# for_window [class="QQ"] sticky enable
 
 for_window [class="GoldenDict"] floating enable
 for_window [class="GoldenDict"] sticky enable
