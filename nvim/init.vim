@@ -250,7 +250,8 @@ map <Leader> <Plug>(easymotion-prefix)
 " ========== COC ==========
 
 " === Global Config ===
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-clangd', 'coc-jedi', 'coc-explorer', 'coc-translator', 'coc-pairs']
+" let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-clangd', 'coc-jedi', 'coc-explorer', 'coc-translator', 'coc-pairs']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-clangd', 'coc-jedi', 'coc-translator', 'coc-pairs']
 
 set hidden
 
