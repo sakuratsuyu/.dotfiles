@@ -17,9 +17,6 @@ BatchifyKeymap({
     { 'n', ',', '@q', opts },
     { 'v', ',', '@q', opts },
 
-    -- Delete a word
-    -- { 'n', '<BS>', '"_ciw', opt },
-
     -- Cut and make a new line
     { 'n', '<C-j>', 'a<CR><ESC>k$', opts },
     { 'v', '<C-j>', '<ESC>a<CR><ESC>k$', opts },
@@ -27,8 +24,8 @@ BatchifyKeymap({
     -- Move line up and down
     { 'n', '<C-S-UP>', ':move .-2<CR>', opts },
     { 'n', '<C-S-DOWN>', ':move .+1<CR>', opts },
-    { 'v', '<C-S-UP>', ':move .-2<CR>', opts },
-    { 'v', '<C-S-DOWN>', ':move .+1<CR>', opts },
+    { 'v', '<C-S-UP>', '<ESC>:move .-2<CR>', opts },
+    { 'v', '<C-S-DOWN>', '<ESC>:move .+1<CR>', opts },
     { 'i', '<C-S-UP>', '<ESC>:move .-2<CR>i', opts },
     { 'i', '<C-S-DOWN>', '<ESC>:move .+1<CR>i', opts },
 
@@ -51,10 +48,10 @@ BatchifyKeymap({
     { 'n', 'sk', ':set nosplitbelow<CR>:split<CR>', opts },
     { 'n', 'sj', ':set splitbelow<CR>:split<CR>', opts },
     { 'v', 's', '<NOP>', opts },
-    { 'v', 'sl', ':set splitright<CR>:vsplit<CR>', opts },
-    { 'v', 'sh', ':set nosplitright<CR>:vsplit<CR>', opts },
-    { 'v', 'sk', ':set nosplitbelow<CR>:split<CR>', opts },
-    { 'v', 'sj', ':set splitbelow<CR>:split<CR>', opts },
+    { 'v', 'sl', '<ESC>:set splitright<CR>:vsplit<CR>', opts },
+    { 'v', 'sh', '<ESC>:set nosplitright<CR>:vsplit<CR>', opts },
+    { 'v', 'sk', '<ESC>:set nosplitbelow<CR>:split<CR>', opts },
+    { 'v', 'sj', '<ESC>:set splitbelow<CR>:split<CR>', opts },
 
     -- Split Strategy
     { 'n', 'sv', '<C-w>t<C-w>H', opts },
@@ -77,20 +74,41 @@ BatchifyKeymap({
     { 'n', '<DOWN>', ':resize -5<CR>', opts },
     { 'n', '<LEFT>',':vertical resize+5<CR>', opts },
     { 'n', '<RIGHT>',':vertical resize-5<CR>', opts },
-    { 'v', '<UP>', ':resize +5<CR>', opts },
-    { 'v', '<DOWN>', ':resize -5<CR>', opts },
-    { 'v', '<LEFT>',':vertical resize+5<CR>', opts },
-    { 'v', '<RIGHT>',':vertical resize-5<CR>', opts },
+    { 'v', '<UP>', '<ESC>:resize +5<CR>', opts },
+    { 'v', '<DOWN>', '<ESC>:resize -5<CR>', opts },
+    { 'v', '<LEFT>','<ESC>:vertical resize+5<CR>', opts },
+    { 'v', '<RIGHT>','<ESC>:vertical resize-5<CR>', opts },
 
     -- Tab
-    { 'n', 'tu', ':tabnew<CR>', opts },
-    { 'n', '<C-h>', ':tabprev<CR>', opts },
-    { 'n', '<C-l>', ':tabnext<CR>', opts },
-    { 'v', 'tu', ':tabnew<CR>', opts },
-    { 'v', '<C-h>', ':tabprev<CR>', opts },
-    { 'v', '<C-l>', ':tabnext<CR>', opts },
+    { 'n', 'U', ':tabnew<CR>', opts },
+    { 'n', 'W', ':tabclose<CR>', opts },
+    { 'n', '<M-h>', ':tabprev<CR>', opts },
+    { 'n', '<M-l>', ':tabnext<CR>', opts },
+    { 'v', 'tu', '<ESC>:tabnew<CR>', opts },
+    { 'v', 'W', '<ESC>:tabclose<CR>', opts },
+    { 'v', '<M-h>', '<ESC>:tabprev<CR>', opts },
+    { 'v', '<M-l>', '<ESC>:tabnext<CR>', opts },
+
+    { 'n', '<M-1>', '1gt', opts },
+    { 'n', '<M-2>', '2gt', opts },
+    { 'n', '<M-3>', '3gt', opts },
+    { 'n', '<M-4>', '4gt', opts },
+    { 'n', '<M-5>', '5gt', opts },
+    { 'n', '<M-6>', '6gt', opts },
+    { 'n', '<M-7>', '7gt', opts },
+    { 'n', '<M-8>', '8gt', opts },
+    { 'n', '<M-9>', '9gt', opts },
+    { 'v', '<M-1>', '1gt', opts },
+    { 'v', '<M-2>', '2gt', opts },
+    { 'v', '<M-3>', '3gt', opts },
+    { 'v', '<M-4>', '4gt', opts },
+    { 'v', '<M-5>', '5gt', opts },
+    { 'v', '<M-6>', '6gt', opts },
+    { 'v', '<M-7>', '7gt', opts },
+    { 'v', '<M-8>', '8gt', opts },
+    { 'v', '<M-9>', '9gt', opts },
 
     -- Spell Check
     { 'n', '<LEADER>sp', ':set spell!<CR>', opts },
-    { 'v', '<LEADER>sp', ':set spell!<CR>', opts },
+    { 'v', '<LEADER>sp', '<ESC>:set spell!<CR>', opts },
 })

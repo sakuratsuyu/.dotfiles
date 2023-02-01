@@ -4,6 +4,13 @@
 --   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 -- end
 
+local opt = vim.opt
+opt.completeopt='menu,menuone,noselect'
+
+vim.cmd([[
+    highlight! default link CmpItemKind CmpItemMenuDefault
+]])
+
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
@@ -48,7 +55,12 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },  -- cmp-nvim-lsp
+        {
+            name = 'nvim_lsp',   -- cmp-nvim-lsp
+--            entry_filter = function(entry, _)
+--                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+--            end
+        },
         { name = 'path' },      -- cmp-path
         { name = 'luasnip' },   -- cmp_luasnip
         { name = 'fish' },      -- cmp-fish

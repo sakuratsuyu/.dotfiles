@@ -16,7 +16,7 @@ keymap.set('n', '<M-c>', ':TSHighlightCapturesUnderCursor<CR>', opt)
 
 require('nvim-treesitter.configs').setup {
     -- A list of parser names
-    ensure_installed = { 'c', 'lua', 'vim', 'help' }, 
+    ensure_installed = { 'c', 'lua', 'vim', 'help' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- Automatically install missing parsers when entering buffer
@@ -62,5 +62,9 @@ require('nvim-treesitter.configs').setup {
             goto_node = '<cr>',
             show_help = '?',
         },
+    },
+
+    autotag = {
+        enable = true,
     }
 }

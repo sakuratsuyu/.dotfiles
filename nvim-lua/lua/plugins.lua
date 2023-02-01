@@ -94,8 +94,10 @@ local function InitPacker()
     use { 'sainnhe/everforest' }
 
     -- AIRLINE
-    use { 'theniceboy/eleline.vim' }
+--    use { 'theniceboy/eleline.vim' }
     use { 'mg979/vim-xtabline' }
+    use { 'nvim-lualine/lualine.nvim' }
+--    use {'akinsho/bufferline.nvim', tag = 'v3.*'}
 
     -- LSP
     use { 'williamboman/mason.nvim' }
@@ -109,11 +111,8 @@ local function InitPacker()
     use { 'hrsh7th/cmp-path' }
     use { 'hrsh7th/cmp-cmdline' }
     use { 'saadparwaiz1/cmp_luasnip' }
-    use { "mtoohey31/cmp-fish", ft = "fish" }
+    use { 'mtoohey31/cmp-fish', ft = 'fish' }
     use { 'onsails/lspkind-nvim' }
-
-    -- SNIPPETS
-    use { 'L3MON4D3/LuaSnip' }
 
     -- TREESITTER
     use {
@@ -127,6 +126,31 @@ local function InitPacker()
         'nvim-treesitter/playground',
         after = 'nvim-treesitter'
     }
+    use {
+        'windwp/nvim-ts-autotag',
+        after = 'nvim-treesitter'
+    }
+
+    -- AUTO-PAIRS
+    -- use { 'jiangmiao/auto-pairs' }
+    use { "windwp/nvim-autopairs" }
+
+    -- MULTIPLE CURSORS
+    use { 'mg979/vim-visual-multi' }
+
+    -- SURROUNDING
+    use { 'machakann/vim-sandwich' }
+
+    -- SNIPPETS
+    use { 'L3MON4D3/LuaSnip' }
+
+
+    -- FILE EXPLORER
+    use { 'nvim-tree/nvim-tree.lua', tag = 'nightly' }
+    use { 'nvim-tree/nvim-web-devicons' }
+
+    -- UNDOTREE
+    use { 'mbbill/undotree' }
 
     -- TELESCOPE
     use {
@@ -135,27 +159,25 @@ local function InitPacker()
             "nvim-lua/plenary.nvim", -- Lua development module
         }
     }
-    use { 'nvim-telescope/telescope-file-browser.nvim' }
-    use { 'kyazdani42/nvim-web-devicons' }
+--    use { 'nvim-telescope/telescope-file-browser.nvim' }
 
-    -- AUTO-PAIRS
-    -- use { 'jiangmiao/auto-pairs' }
-    use { "windwp/nvim-autopairs" }
+    -- NOICE
+    use({
+        "folke/noice.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    })
 
-    -- UNDOTREE
-    use { 'mbbill/undotree' }
-
-    -- MULTIPLE CURSORS
-    use { 'mg979/vim-visual-multi' }
-
-    -- SURROUNDING
-    use { 'machakann/vim-sandwich' }
-
-    -- TABLE MODE
-    use { 'dhruvasagar/vim-table-mode' }
+    -- FOLD
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
     -- EASYMOTION
     use { 'easymotion/vim-easymotion' }
+
+    -- TABLE MODE
+    use { 'dhruvasagar/vim-table-mode' }
 
 end
 
