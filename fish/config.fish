@@ -12,3 +12,5 @@ set -g -x VISUAL nvim
 
 set -g -x EDITOR nvim
 set -g -x PAGER less
+
+fish_vi_key_bindings
