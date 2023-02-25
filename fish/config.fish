@@ -13,4 +13,13 @@ set -g -x VISUAL nvim
 set -g -x EDITOR nvim
 set -g -x PAGER less
 
+bind -M default \ce accept-autosuggestion
+bind -M insert \ce accept-autosuggestion
+
+bind -M default \cp history-search-backward
+bind -M insert \cp history-search-backward
+
+bind -M default \cn history-search-forward
+bind -M insert \cn history-search-forward
+
 fish_vi_key_bindings
