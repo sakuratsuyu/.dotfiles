@@ -28,6 +28,8 @@ require('plugins.tree')
 require('plugins.telescope')
 require('plugins.undotree')
 
+require('plugins.floaterm')
+
 require('plugins.noice')
 
 require('plugins.multi-cursor')

@@ -161,6 +161,9 @@ local function InitPacker()
     }
 --    use { 'nvim-telescope/telescope-file-browser.nvim' }
 
+    -- FLOAT TERMINAL
+    use { 'voldikss/vim-floaterm' }
+
     -- NOICE
     use({
         "folke/noice.nvim",
