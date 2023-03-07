@@ -63,7 +63,7 @@ require('mason-lspconfig').setup({
     automatic_installation = true
 })
 
-local server = { 'clangd', 'pyright', 'tsserver', 'rust_analyzer', 'sumneko_lua' }
+local server = { 'clangd', 'pyright', 'tsserver', 'rust_analyzer', 'lua_ls' }
 
 local lsp_flags = {
     debounce_text_changes = 50,
@@ -80,7 +80,7 @@ for _, lsp in ipairs(server) do
     }
 end
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
