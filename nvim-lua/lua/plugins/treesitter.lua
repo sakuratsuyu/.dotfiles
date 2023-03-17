@@ -40,7 +40,7 @@ require('nvim-treesitter.configs').setup {
         keymaps = {
             init_selection    = '+',     -- set to `false` to disable one of the mappings
             node_incremental  = '+',
-            scope_incremental = '<TAB>',
+            scope_incremental = '<CR>',
             node_decremental  = '-',
         },
     },
