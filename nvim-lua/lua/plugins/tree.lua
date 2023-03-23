@@ -9,6 +9,26 @@ local g = vim.g
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
+-- Open nvim tree when open a folder
+local function open_nvim_tree(data)
+    local is_real_file = vim.fn.filereadable(data.file) == 1
+    local is_a_directory = vim.fn.isdirectory(data.file) == 1
+
+    if is_a_directory then
+        vim.cmd.cd(data.file)
+        require('nvim-tree.api').tree.open()
+        return
+    end
+
+    if is_real_file then
+        require('nvim-tree.api').tree.toggle { focus = false, find_file = true }
+        return
+    end
+end
+
+local autocmd = vim.api.nvim_create_autocmd
+autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
+
 require('nvim-tree').setup {
     auto_reload_on_write = true,                -- Reloads the explorer every time a buffer is written to.
     sort_by = 'case_sensitive',
