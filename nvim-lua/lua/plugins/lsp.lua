@@ -63,7 +63,7 @@ require('mason-lspconfig').setup({
     automatic_installation = true
 })
 
-local server = { 'clangd', 'pyright', 'tsserver', 'rust_analyzer', 'lua_ls' }
+local server = { 'clangd', 'pyright', 'tsserver', 'rust_analyzer', 'lua_ls', 'cmake' }
 
 local lsp_flags = {
     debounce_text_changes = 50,
@@ -103,4 +103,13 @@ require('lspconfig').lua_ls.setup {
             },
         },
     },
+}
+
+require('lspconfig').cmake.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    init_options = {
+        buildDirectory = "build"
+    }
 }
