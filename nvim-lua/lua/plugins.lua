@@ -176,6 +176,11 @@ local function InitPacker()
     -- FOLD
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
+    -- DATABSE VISUALIZATION
+    use { 'tpope/vim-dadbod' }
+    use { 'kristijanhusak/vim-dadbod-ui'}
+    use { 'kristijanhusak/vim-dadbod-completion'}
+
     -- EASYMOTION
     use { 'easymotion/vim-easymotion' }
 
