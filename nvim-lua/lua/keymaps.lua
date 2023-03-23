@@ -36,8 +36,10 @@ BatchifyKeymap({
     { 'n', 'S', ':w<CR>', opts },
 
     -- Indentation
-    { 'n', '<S-TAB>', '<<', opts },
-    { 'n', '<TAB>', '>>', opts },
+    -- { 'n', '<S-TAB>', '<<', opts },
+    -- { 'n', '<TAB>', '>>', opts },
+    { 'n', '<', '<<', opts },
+    { 'n', '>', '>>', opts },
     { 'v', '<', '<gv', opts },
     { 'v', '>', '>gv', opts },
     { 'v', '<S-TAB>', '<gv', opts },
