@@ -52,12 +52,13 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 
-vim.cmd([[
-    autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd Filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd Filetype typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-]])
+local autocmd = vim.api.nvim_create_autocmd
+autocmd(
+    { 'Filetype yaml,javascript,typescript,typescriptreact' },
+    {
+        command = 'setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab'
+    }
+)
 
 -- Dots
 opt.list = true
