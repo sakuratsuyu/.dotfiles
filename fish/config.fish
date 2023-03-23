@@ -13,6 +13,8 @@ set -g -x VISUAL nvim
 set -g -x EDITOR nvim
 set -g -x PAGER less
 
+set -g -x PATH /home/sakur/.local/bin $PATH
+
 bind -M default \ce accept-autosuggestion
 bind -M insert \ce accept-autosuggestion
 
