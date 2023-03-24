@@ -187,6 +187,9 @@ local function InitPacker()
     -- TABLE MODE
     use { 'dhruvasagar/vim-table-mode' }
 
+    -- GITHUB COPILOT
+    use { 'github/copilot.vim' }
+
 end
 
 local plugins = setmetatable({}, {
