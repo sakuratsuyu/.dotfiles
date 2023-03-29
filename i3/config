@@ -81,8 +81,8 @@ for_window [class="floating"] floating enable
 bindsym $mod+q exec microsoft-edge-stable
 
 # rofi
-bindsym $mod+d exec "rofi -modes 'drun,ssh,toggle:~/.config/rofi/script.sh' -show drun"
-bindsym $mod+t exec "rofi -modes 'toggle:~/.config/rofi/script.sh' -show toggle"
+bindsym $mod+d exec "rofi -modes 'drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh' -show drun"
+bindsym $mod+t exec "rofi -modes 'toggle:~/.config/rofi/toggle.sh' -show toggle"
 
 # screenshot
 bindsym $mod+a exec flameshot gui
@@ -178,16 +178,13 @@ client.background       #ffffff
 set $ws1 ""
 set $ws2 ""
 set $ws3 ""
-# set $ws4 ""
-set $ws4 "4"
+set $ws4 ""
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
-set $wsOffice ""
 
 set $wsMail ""
 
@@ -214,7 +211,6 @@ bindsym $alt+Ctrl+w workspace $wsWeChat
 bindsym $alt+Ctrl+e workspace $wsDingTalk
 bindsym $alt+Ctrl+m workspace $wsMail
 bindsym $alt+Ctrl+z workspace $wsMusic
-bindsym $alt+Ctrl+f workspace $wsOffice
 
 # move focused container to workspace
 
@@ -223,7 +219,6 @@ bindsym $mod+Shift+w move container to workspace $wsWeChat
 bindsym $mod+Shift+e move container to workspace $wsDingTalk
 bindsym $mod+Shift+m move container to workspace $wsMail
 bindsym $mod+Shift+z move container to workspace $wsMusic
-bindsym $mod+Shift+f move container to workspace $wsOffice
 
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -254,7 +249,6 @@ bindsym $mod+Ctrl+w move container to workspace $wsWeChat, workspace $wsWeChat
 bindsym $mod+Ctrl+e move container to workspace $wsDingTalk, workspace $wsDingTalk
 bindsym $mod+Ctrl+m move container to workspace $wsMail, workspace $wsMail
 bindsym $mod+Ctrl+z move container to workspace $wsMusic, workspace $wsMusic
-bindsym $mod+Ctrl+f move container to workspace $wsOffice, workspace $wsOffice
 
 # Change workspace
 bindsym $mod+Tab workspace next 
@@ -329,11 +323,11 @@ mode "power" {
 assign [class="Microsoft-edge"] $ws2
 assign [class="Typora"] $ws3
 
+assign [class="wps"] $ws4
+assign [class="wpp"] $ws4
+
 assign [class="thunderbird"] $wsMail
 assign [class="netease-cloud-music-gtk4"] $wsMusic
-
-assign [class="Soffice"] $wsOffice
-assign [class="libreoffice"] $wsOffice
 
 for_window [class="copyq"] floating enable
 for_window [class="copyq"] sticky enable
