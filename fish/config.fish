@@ -15,6 +15,8 @@ set -g -x PAGER less
 
 set -g -x PATH /home/sakur/.local/bin $PATH
 
+proxy
+
 bind -M default \ce accept-autosuggestion
 bind -M insert \ce accept-autosuggestion
 
