@@ -15,6 +15,7 @@ set -g -x PAGER less
 
 set -g -x PATH /home/sakur/.local/bin $PATH
 
+set -g -x PATH /usr/lib/jvm/java-20-jdk/bin $PATH
 proxy
 
 bind -M default \ce accept-autosuggestion
