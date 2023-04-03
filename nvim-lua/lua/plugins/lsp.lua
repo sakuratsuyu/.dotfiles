@@ -63,7 +63,7 @@ require('mason-lspconfig').setup({
     automatic_installation = true
 })
 
-local server = { 'clangd', 'pyright', 'tsserver', 'rust_analyzer', 'lua_ls', 'cmake' }
+local server = { 'clangd', 'pyright', 'tsserver', 'rust_analyzer', 'lua_ls' }
 
 local lsp_flags = {
     debounce_text_changes = 50,
@@ -105,11 +105,42 @@ require('lspconfig').lua_ls.setup {
     },
 }
 
-require('lspconfig').cmake.setup{
+require('lspconfig').cmake.setup {
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
     init_options = {
         buildDirectory = "build"
+    }
+}
+
+require('lspconfig').texlab.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    settings = {
+        texlab = {
+            auxDirectory = ".",
+            bibtexFormatter = "texlab",
+            build = {
+                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                executable = "latexmk",
+                forwardSearchAfter = false,
+                onSave = false
+            },
+            chktex = {
+                onEdit = false,
+                onOpenAndSave = false
+            },
+            diagnosticsDelay = 300,
+            formatterLineLength = 80,
+            forwardSearch = {
+                args = {}
+            },
+            latexFormatter = "latexindent",
+            latexindent = {
+                modifyLineBreaks = false
+            }
+        }
     }
 }
