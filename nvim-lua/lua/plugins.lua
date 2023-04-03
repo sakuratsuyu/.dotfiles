@@ -180,6 +180,8 @@ local function InitPacker()
     use { 'tpope/vim-dadbod' }
     use { 'kristijanhusak/vim-dadbod-ui'}
     use { 'kristijanhusak/vim-dadbod-completion'}
+    use { 'kristijanhusak/vim-dadbod-ui', after = 'vim-dadbod' }
+    use { 'kristijanhusak/vim-dadbod-completion', after = 'vim-dadbod' }
 
     -- EASYMOTION
     use { 'easymotion/vim-easymotion' }
