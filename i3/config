@@ -78,11 +78,12 @@ bindsym $mod+z exec alacritty --class floating
 for_window [class="floating"] floating enable
 
 # start a browser
-bindsym $mod+q exec microsoft-edge-stable
+# bindsym $mod+q exec microsoft-edge-stable
+bindsym $mod+q exec "fish -c 'proxy; microsoft-edge-stable'"
 
 # rofi
-bindsym $mod+d exec "rofi -modes 'drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh' -show drun"
-bindsym $mod+t exec "rofi -modes 'toggle:~/.config/rofi/toggle.sh' -show toggle"
+bindsym $mod+d exec "fish -c 'proxy;rofi -modes drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh -show drun'"
+bindsym $mod+t exec "fish -c 'proxy;rofi -modes toggle:~/.config/rofi/toggle.sh -show toggle'"
 
 # screenshot
 bindsym $mod+a exec flameshot gui
