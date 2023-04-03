@@ -16,6 +16,7 @@ set -g -x PAGER less
 set -g -x PATH /home/sakur/.local/bin $PATH
 
 set -g -x PATH /usr/lib/jvm/java-20-jdk/bin $PATH
+
 proxy
 
 bind -M default \ce accept-autosuggestion
@@ -28,3 +29,11 @@ bind -M default \cn history-search-forward
 bind -M insert \cn history-search-forward
 
 fish_vi_key_bindings
+
+abbr -a -- gs 'git status'
+abbr -a -- ga 'git add'
+abbr -a -- gc 'git commit'
+abbr -a -- gl 'git log --all --graph --decorate'
+abbr -a -- gp 'git pull'
+abbr -a -- gP 'git push'
+abbr -a -- gco 'git checkout'
