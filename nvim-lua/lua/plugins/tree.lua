@@ -9,21 +9,23 @@ local g = vim.g
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
--- Open nvim tree when open a folder
+-- When to open nvim tree
 local function open_nvim_tree(data)
     local is_real_file = vim.fn.filereadable(data.file) == 1
     local is_a_directory = vim.fn.isdirectory(data.file) == 1
 
+    -- Open nvim tree when open a directory
     if is_a_directory then
         vim.cmd.cd(data.file)
         require('nvim-tree.api').tree.open()
         return
     end
 
-    if is_real_file then
-        require('nvim-tree.api').tree.toggle { focus = false, find_file = true }
-        return
-    end
+    -- Open nvim tree when open a file
+    -- if is_real_file then
+    --     require('nvim-tree.api').tree.toggle { focus = false, find_file = true }
+    --     return
+    -- end
 end
 
 local autocmd = vim.api.nvim_create_autocmd
@@ -39,7 +41,7 @@ require('nvim-tree').setup {
         centralize_selection = false,           -- When entering nvim-tree, reposition the view so that the current node is initially centralized.
         cursorline = true,
         debounce_delay = 15,
-        width = 30,
+        width = 40,
         hide_root_folder = false,
         side = 'left',
         number = true,
