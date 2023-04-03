@@ -30,9 +30,11 @@ require('plugins.undotree')
 
 require('plugins.floaterm')
 
--- require('plugins.noice')
+require('plugins.noice')
 
 require('plugins.db')
+
+require('plugins.tex')
 
 require('plugins.multi-cursor')
 require('plugins.sandwich')
