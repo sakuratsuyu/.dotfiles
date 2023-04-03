@@ -178,8 +178,6 @@ local function InitPacker()
 
     -- DATABSE VISUALIZATION
     use { 'tpope/vim-dadbod' }
-    use { 'kristijanhusak/vim-dadbod-ui'}
-    use { 'kristijanhusak/vim-dadbod-completion'}
     use { 'kristijanhusak/vim-dadbod-ui', after = 'vim-dadbod' }
     use { 'kristijanhusak/vim-dadbod-completion', after = 'vim-dadbod' }
 
@@ -188,6 +186,9 @@ local function InitPacker()
 
     -- TABLE MODE
     use { 'dhruvasagar/vim-table-mode' }
+
+    -- VIMTEX
+    use { 'lervag/vimtex' }
 
     -- GITHUB COPILOT
     use { 'github/copilot.vim' }
