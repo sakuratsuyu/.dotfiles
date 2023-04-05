@@ -96,7 +96,6 @@ local function InitPacker()
 
     -- AIRLINE
 --    use { 'theniceboy/eleline.vim' }
-    use { 'mg979/vim-xtabline' }
 --    use { 'mg979/vim-xtabline' }
 --    use { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' }
     use { 'nanozuki/tabby.nvim' }
@@ -151,6 +150,7 @@ local function InitPacker()
 
     -- FILE EXPLORER
     use { 'nvim-tree/nvim-tree.lua', tag = 'nightly', requires = 'nvim-web-devicons' }
+
     -- SYMBOLS
     use { 'simrat39/symbols-outline.nvim' }
 
@@ -179,7 +179,11 @@ local function InitPacker()
     })
 
     -- FOLD
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use {'kevinhwang91/nvim-ufo',
+        requires = {
+            'kevinhwang91/promise-async',
+        }
+    }
     use { 'lukas-reineke/indent-blankline.nvim' }
 
     -- DATABSE VISUALIZATION
@@ -198,6 +202,7 @@ local function InitPacker()
 
     -- GIT
     use { 'airblade/vim-gitgutter' }
+
     -- GITHUB COPILOT
     use { 'github/copilot.vim' }
 
