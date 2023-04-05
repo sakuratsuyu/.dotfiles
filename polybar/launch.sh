@@ -2,10 +2,6 @@
 
 polybar-msg cmd quit
 
-if  type "xrandr"; then
-		for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-		MONITOR=$m polybar --reload mybar &
-	done
-else
-	polybar --reload mybar &
-fi
+MONITOR=eDP-1 polybar --reload primary &
+MONITOR=DP-1 polybar --reload primary &
+MONITOR=HDMI-1 polybar --reload secondary &
