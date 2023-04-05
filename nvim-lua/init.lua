@@ -24,6 +24,7 @@ require('plugins.autopairs')
 require('plugins.treesitter')
 require('plugins.symbol')
 require('plugins.ufo')
+require('plugins.indent-line')
 require('plugins.git')
 
 require('plugins.tree')

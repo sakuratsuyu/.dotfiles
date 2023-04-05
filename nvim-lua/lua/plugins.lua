@@ -177,6 +177,7 @@ local function InitPacker()
 
     -- FOLD
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use { 'lukas-reineke/indent-blankline.nvim' }
 
     -- DATABSE VISUALIZATION
     use { 'tpope/vim-dadbod' }
