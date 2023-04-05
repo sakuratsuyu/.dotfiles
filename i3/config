@@ -29,6 +29,7 @@ exec_always killall fcitx5
 exec_always killall goldendict
 exec_always killall fusuma
 exec_always killall copyq
+exec_always killall cfw
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill --randomize --no-fehbg ~/Pictures/Wallpaper/*
@@ -45,6 +46,7 @@ exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id pasystray
 exec_always --no-startup-id copyq
 exec_always --no-startup-id flameshot
+exec_always --no-startup-id cfw
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -272,7 +274,7 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h  resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
@@ -335,6 +337,10 @@ for_window [class="copyq"] sticky enable
 
 for_window [class="GoldenDict"] floating enable
 for_window [class="GoldenDict"] sticky enable
+
+for_window [class="Clash for Windows"] floating enable
+
+for_window [class="Pavucontrol"] floating enable
 
 for_window [class="uTools"] floating enable
 for_window [class="uTools"] sticky enable
