@@ -1,11 +1,11 @@
 local keymap = vim.keymap
 local opt = { noremap = true, silent = true }
 
-keymap.set('n', '<M-g>', ':TSPlaygroundToggle<CR>', opt)
-keymap.set('v', '<M-g>', ':TSPlaygroundToggle<CR>', opt)
-keymap.set('i', '<M-g>', '<ESC>:TSPlaygroundToggle<CR>a', opt)
+keymap.set('n', '<LEADER>gp', ':TSPlaygroundToggle<CR>', opt)
+keymap.set('v', '<LEADER>gp', ':TSPlaygroundToggle<CR>', opt)
+keymap.set('i', '<LEADER>gp', '<ESC>:TSPlaygroundToggle<CR>a', opt)
 
-keymap.set('n', '<M-c>', ':TSHighlightCapturesUnderCursor<CR>', opt)
+keymap.set('n', '<LEADER>gc', ':TSHighlightCapturesUnderCursor<CR>', opt)
 
 -- [[
 -- e.g. For `false`, from `:TSHighlightCapturesUnderCursor<CR>`, we know it's @boolean. 
@@ -16,7 +16,7 @@ keymap.set('n', '<M-c>', ':TSHighlightCapturesUnderCursor<CR>', opt)
 
 require('nvim-treesitter.configs').setup {
     -- A list of parser names
-    ensure_installed = { 'c', 'lua', 'vim', 'help' },
+    ensure_installed = { 'c', 'lua', 'vim' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- Automatically install missing parsers when entering buffer
