@@ -83,6 +83,7 @@ local function InitPacker()
     local use = packer.use
 
     use { 'wbthomason/packer.nvim' }
+    use { 'nvim-tree/nvim-web-devicons' }
 
     -- STARTUP TIME ANALYSIS
     use { 'dstein64/vim-startuptime', cmd = "StartUpTime" }
@@ -96,6 +97,9 @@ local function InitPacker()
     -- AIRLINE
 --    use { 'theniceboy/eleline.vim' }
     use { 'mg979/vim-xtabline' }
+--    use { 'mg979/vim-xtabline' }
+--    use { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' }
+    use { 'nanozuki/tabby.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
 --    use {'akinsho/bufferline.nvim', tag = 'v3.*'}
 
@@ -146,8 +150,7 @@ local function InitPacker()
 
 
     -- FILE EXPLORER
-    use { 'nvim-tree/nvim-tree.lua', tag = 'nightly' }
-    use { 'nvim-tree/nvim-web-devicons' }
+    use { 'nvim-tree/nvim-tree.lua', tag = 'nightly', requires = 'nvim-web-devicons' }
     -- SYMBOLS
     use { 'simrat39/symbols-outline.nvim' }
 
