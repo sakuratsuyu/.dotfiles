@@ -144,3 +144,10 @@ require('lspconfig').texlab.setup {
         }
     }
 }
+
+require('lspconfig').java_language_server.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    cmd = { '/home/sakur/.local/share/nvim/mason/packages/java-language-server/dist/lang_server_linux.sh' }
+}
