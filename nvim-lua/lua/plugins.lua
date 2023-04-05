@@ -190,6 +190,8 @@ local function InitPacker()
     -- VIMTEX
     use { 'lervag/vimtex' }
 
+    -- GIT
+    use { 'airblade/vim-gitgutter' }
     -- GITHUB COPILOT
     use { 'github/copilot.vim' }
 

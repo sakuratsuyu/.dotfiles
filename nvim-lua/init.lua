@@ -23,6 +23,7 @@ require('plugins.autopairs')
 
 require('plugins.treesitter')
 require('plugins.ufo')
+require('plugins.git')
 
 require('plugins.tree')
 require('plugins.telescope')
