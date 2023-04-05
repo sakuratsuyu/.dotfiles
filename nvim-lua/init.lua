@@ -22,6 +22,7 @@ require('plugins.autopairs')
 -- require('plugins.snip')
 
 require('plugins.treesitter')
+require('plugins.symbol')
 require('plugins.ufo')
 require('plugins.git')
 

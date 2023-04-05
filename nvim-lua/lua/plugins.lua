@@ -148,6 +148,8 @@ local function InitPacker()
     -- FILE EXPLORER
     use { 'nvim-tree/nvim-tree.lua', tag = 'nightly' }
     use { 'nvim-tree/nvim-web-devicons' }
+    -- SYMBOLS
+    use { 'simrat39/symbols-outline.nvim' }
 
     -- UNDOTREE
     use { 'mbbill/undotree' }
