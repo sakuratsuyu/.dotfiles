@@ -3,7 +3,7 @@ local opt = { noremap = true, silent = true }
 
 keymap.set('n', '<LEADER>gp', ':TSPlaygroundToggle<CR>', opt)
 keymap.set('v', '<LEADER>gp', ':TSPlaygroundToggle<CR>', opt)
-keymap.set('i', '<LEADER>gp', '<ESC>:TSPlaygroundToggle<CR>a', opt)
+-- keymap.set('i', '<LEADER>gp', '<ESC>:TSPlaygroundToggle<CR>a', opt)
 
 keymap.set('n', '<LEADER>gc', ':TSHighlightCapturesUnderCursor<CR>', opt)
 
