@@ -58,8 +58,8 @@ vim.cmd([[
 
 -- Dots
 opt.list = true
-opt.listchars = 'tab:-·,trail:·,lead:·'
--- opt.listchars = 'tab:▸ ,trail:·,extends:>,precedes:<,nbsp:·'
+-- opt.listchars = 'tab:-·,trail:·,lead:·'
+opt.listchars = 'tab:▸ ,trail:·,extends:>,precedes:<,nbsp:·'
 
 opt.autoread = true
 vim.bo.autoread = true
