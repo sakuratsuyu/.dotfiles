@@ -56,7 +56,7 @@ require('lualine').setup {
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {
-            statusline = { 'startify', 'NvimTree', 'undotree', 'diffpanel' },
+            statusline = { 'startify', 'NvimTree', 'Outline', 'undotree', 'diffpanel' },
             winbar = {},
         },
         ignore_focus = {},
