@@ -95,12 +95,12 @@ local function InitPacker()
     use { 'sainnhe/everforest' }
 
     -- AIRLINE
---    use { 'theniceboy/eleline.vim' }
---    use { 'mg979/vim-xtabline' }
---    use { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' }
+    -- use { 'theniceboy/eleline.vim' }
+    -- use { 'mg979/vim-xtabline' }
+    -- use { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' }
     use { 'nanozuki/tabby.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
---    use {'akinsho/bufferline.nvim', tag = 'v3.*'}
+    --- use {'akinsho/bufferline.nvim', tag = 'v3.*'}
 
     -- LSP
     use { 'williamboman/mason.nvim' }
