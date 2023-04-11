@@ -1,3 +1,5 @@
 nvim/tmp
 nvim-lua/tmp
 nvim-lua/plugin
+
+**/__pycache__
