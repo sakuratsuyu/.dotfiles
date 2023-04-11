@@ -53,7 +53,7 @@ opt.shiftwidth = 4
 opt.expandtab = true
 
 vim.cmd([[
-    autocmd Filetype yaml,javascript,typescript,typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd Filetype yaml,html,css,scss,javascript,typescript,typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 ]])
 
 -- Dots
