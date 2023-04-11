@@ -18,9 +18,9 @@ case "$*" in
             killall picom
         fi
         ;;
-    "")
+    *)
         echo xflux
-        echo picom
         echo polybar
+        echo picom
         ;;
 esac
