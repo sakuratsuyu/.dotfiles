@@ -5,7 +5,8 @@ gaps inner 15
 gaps outer 0
 # new_window 1pixel
 
-set $mod Mod4
+set $super Mod4
+set $mod Mod3
 set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -34,7 +35,7 @@ exec_always killall cfw
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill --randomize --no-fehbg ~/Pictures/Wallpaper/*
 exec_always --no-startup-id picom -b --config ~/.config/picom.conf
-# exec_always --no-startup-id xmodmap ~/.config/xmodmap.conf
+exec_always --no-startup-id xmodmap ~/Xmodmap.conf
 # exec_always --no-startup-id autokey-gtk
 exec_always --no-startup-id thunderbird
 exec_always --no-startup-id goldendict
@@ -58,104 +59,103 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec amixer set Master toggle
 bindsym XF85AudioLowerVolume exec amixer set Master playback 1300-
 bindsym XF86AudioRaiseVolume exec amixer set Master playback 1300+
-bindsym $mod+F1 exec amixer set Master toggle
-bindsym $mod+F2 exec amixer set Master playback 1300-
-bindsym $mod+F3 exec amixer set Master playback 1300+
+bindsym $mod+backslash exec amixer set Master toggle
+bindsym $mod+bracketleft exec amixer set Master playback 1300-
+bindsym $mod+bracketright exec amixer set Master playback 1300+
 
 # Use light to adjust Lightness
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5 
 
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
 
 # kill focused window
-bindsym $mod+w kill
+bindsym $super+w kill
 
 # start a terminal
+bindsym $super+Return exec alacritty
+bindsym $super+apostrophe exec st
 bindsym $mod+Return exec alacritty
 bindsym $mod+apostrophe exec st
-bindsym $mod+z exec alacritty --class floating
+bindsym $super+z exec alacritty --class floating
 for_window [class="floating"] floating enable
 
 # start a browser
-# bindsym $mod+q exec microsoft-edge-stable
-bindsym $mod+q exec "fish -c 'proxy; microsoft-edge-stable'"
+bindsym $super+q exec "fish -c 'proxy; microsoft-edge-stable'"
+bindsym $super+e exec "fish -c 'proxy; thunar'"
 
 # rofi
-bindsym $mod+d exec "fish -c 'proxy;rofi -modes drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh -show drun'"
-bindsym $mod+t exec "fish -c 'proxy;rofi -modes toggle:~/.config/rofi/toggle.sh -show toggle'"
+bindsym $super+d exec "fish -c 'proxy;rofi -modes drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh -show drun'"
+bindsym $super+t exec "fish -c 'proxy;rofi -modes toggle:~/.config/rofi/toggle.sh -show toggle'"
 
 # screenshot
-bindsym $mod+a exec flameshot gui
+bindsym $super+a exec flameshot gui
 
 # wallpaper
-bindsym $mod+n exec feh --bg-fill --randomize --no-fehbg ~/Pictures/Wallpaper/*
+bindsym $mod+k exec feh --bg-fill --randomize --no-fehbg ~/Pictures/Wallpaper/*
 
 # Window operation
 
 # move window across heads
-bindsym $mod+p move workspace to output up; move workspace to output right;
+bindsym $super+p move workspace to output up; move workspace to output right;
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+k focus down
-bindsym $mod+j focus up
-bindsym $mod+l focus right
+bindsym $super+h focus left
+bindsym $super+k focus down
+bindsym $super+j focus up
+bindsym $super+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
 bindsym $alt+Tab focus prev
 bindsym $alt+Shift+Tab focus next
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
 
 # Container layout
 
 focus_follows_mouse yes
 
-# split in horizontal orientation
-bindsym $mod+g split horizontal
-# split in vertical orientation
-bindsym $mod+v split vertical
-# toggle 
-bindsym $mod+b split toggle
+# split in horizontal|vertical|toggle
+bindsym $super+Shift+q split horizontal
+bindsym $super+Shift+w split vertical
+bindsym $super+Shift+e split toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $super+f fullscreen toggle
 popup_during_fullscreen smart
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+a layout tabbed
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+d layout toggle split
+bindsym $super+Shift+a layout tabbed
+bindsym $super+Shift+s layout stacking
+bindsym $super+Shift+d layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+s floating toggle
+bindsym $super+s floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-# bindsym $mod+a focus parent
+# bindsym $super+a focus parentplus
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $super+d focus child
 
 # Window Pattern
 for_window [class=".*"] title_format "%class | %title"
@@ -163,14 +163,14 @@ title_align center
 default_border none
 default_floating_border none
 
-# class                 border		background	text		indicator(default)	child_border(default)
-client.focused          #55d9f3		#55d9f3		#3e3e3e		#2e9ef4				#285577
-client.focused_inactive #55d9f3		#55d9f3		#3e3e3e		#484e50				#5f676a
-client.unfocused        #d4efff		#d4efff 	#3e3e3e 	#292d2e   			#222222
+# class                 border      background  text        indicator(default)  child_border(default)
+client.focused          #55d9f3     #55d9f3     #3e3e3e     #2e9ef4             #285577
+client.focused_inactive #55d9f3     #55d9f3     #3e3e3e     #484e50             #5f676a
+client.unfocused        #d4efff     #d4efff     #3e3e3e     #292d2e             #222222
 
 # default
-client.urgent           #2f343a		#900000 	#ffffff 	#900000   			#900000
-client.placeholder      #000000		#0c0c0c 	#ffffff 	#000000   			#0c0c0c
+client.urgent           #2f343a     #900000     #ffffff     #900000             #900000
+client.placeholder      #000000     #0c0c0c     #ffffff     #000000             #0c0c0c
 client.background       #ffffff
 
 
@@ -196,131 +196,122 @@ set $wsQQ ""
 set $wsWeChat ""
 set $wsDingTalk ""
 set $wsMusic ""
+set $wsRD ""
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $super+1 workspace $ws1
+bindsym $super+2 workspace $ws2
+bindsym $super+3 workspace $ws3
+bindsym $super+4 workspace $ws4
+bindsym $super+5 workspace $ws5
+bindsym $super+6 workspace $ws6
+bindsym $super+7 workspace $ws7
+bindsym $super+8 workspace $ws8
+bindsym $super+9 workspace $ws9
+bindsym $super+0 workspace $ws10
 
-bindsym $alt+Ctrl+q workspace $wsQQ
-bindsym $alt+Ctrl+w workspace $wsWeChat
-bindsym $alt+Ctrl+e workspace $wsDingTalk
-bindsym $alt+Ctrl+m workspace $wsMail
-bindsym $alt+Ctrl+z workspace $wsMusic
+bindsym $mod+0 workspace $wsQQ
+bindsym $mod+minus workspace $wsWeChat
+bindsym $mod+plus workspace $wsDingTalk
+bindsym $mod+o workspace $wsMail
+bindsym $mod+p workspace $wsMusic
+bindsym $mod+9 workspace $wsRD
 
 # move focused container to workspace
 
-bindsym $mod+Shift+q move container to workspace $wsQQ
-bindsym $mod+Shift+w move container to workspace $wsWeChat
-bindsym $mod+Shift+e move container to workspace $wsDingTalk
-bindsym $mod+Shift+m move container to workspace $wsMail
-bindsym $mod+Shift+z move container to workspace $wsMusic
+bindsym $super+Shift+1 move container to workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4
+bindsym $super+Shift+5 move container to workspace $ws5
+bindsym $super+Shift+6 move container to workspace $ws6
+bindsym $super+Shift+7 move container to workspace $ws7
+bindsym $super+Shift+8 move container to workspace $ws8
+bindsym $super+Shift+9 move container to workspace $ws9
+bindsym $super+Shift+0 move container to workspace $ws10
 
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $wsQQ
+bindsym $mod+Shift+minus move container to workspace $wsWeChat
+bindsym $mod+Shift+plus move container to workspace $wsDingTalk
+bindsym $mod+Shift+o move container to workspace $wsMail
+bindsym $mod+Shift+p move container to workspace $wsMusic
+bindsym $mod+Shift+9 move container to workspace $wsRD
 
 # move focused container to workspace and move workspace
 
-bindsym $mod+Ctrl+1 move container to workspace $ws1, workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2, workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3, workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4, workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5, workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6, workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7, workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8, workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9, workspace $ws9
-bindsym $mod+Ctrl+0 move container to workspace $ws10, workspace $ws10
+bindsym $super+Ctrl+1 move container to workspace $ws1, workspace $ws1
+bindsym $super+Ctrl+2 move container to workspace $ws2, workspace $ws2
+bindsym $super+Ctrl+3 move container to workspace $ws3, workspace $ws3
+bindsym $super+Ctrl+4 move container to workspace $ws4, workspace $ws4
+bindsym $super+Ctrl+5 move container to workspace $ws5, workspace $ws5
+bindsym $super+Ctrl+6 move container to workspace $ws6, workspace $ws6
+bindsym $super+Ctrl+7 move container to workspace $ws7, workspace $ws7
+bindsym $super+Ctrl+8 move container to workspace $ws8, workspace $ws8
+bindsym $super+Ctrl+9 move container to workspace $ws9, workspace $ws9
+bindsym $super+Ctrl+0 move container to workspace $ws10, workspace $ws10
 
-bindsym $mod+Ctrl+q move container to workspace $wsQQ, workspace $wsQQ
-bindsym $mod+Ctrl+w move container to workspace $wsWeChat, workspace $wsWeChat
-bindsym $mod+Ctrl+e move container to workspace $wsDingTalk, workspace $wsDingTalk
-bindsym $mod+Ctrl+m move container to workspace $wsMail, workspace $wsMail
-bindsym $mod+Ctrl+z move container to workspace $wsMusic, workspace $wsMusic
+bindsym $mod+Ctrl+0 move container to workspace $wsQQ, workspace $wsQQ
+bindsym $mod+Ctrl+minus move container to workspace $wsWeChat, workspace $wsWeChat
+bindsym $mod+Ctrl+plus move container to workspace $wsDingTalk, workspace $wsDingTalk
+bindsym $mod+Ctrl+o move container to workspace $wsMail, workspace $wsMail
+bindsym $mod+Ctrl+p move container to workspace $wsMusic, workspace $wsMusic
+bindsym $mod+Ctrl+9 move container to workspace $wsRD, workspace $wsRD
 
 # Change workspace
-bindsym $mod+Tab workspace next 
-bindsym $mod+Shift+Tab workspace prev
+bindsym $super+Tab workspace next
+bindsym $super+Shift+Tab workspace prev
 workspace_auto_back_and_forth yes
 
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $super+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $super+Shift+r restart
 
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $super+c mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $super+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $super+c mode "default"
 }
 
 
-# Quick start
-bindsym $mod+o mode "open"
-mode "open" {
-		bindsym q exec icalingua; mode "default"
-		bindsym w exec wechat; mode "default"
-		bindsym d exec dingtalk; mode "default"
-		bindsym v exec microsoft-edge-stable 127.0.0.1:2017; mode "default"
-		bindsym x exec xflux -g 120 -l 30 -k 4000; mode "default"
-
-        # back to normal: Enter or Escape or $mod+o
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+o mode "default"
+# Remote Desktop
+bindsym $super+r mode "remote"
+mode "remote" {
+    bindsym $super+r mode "default"
 }
 
 # Power
-bindsym $mod+x mode "power"
+bindsym $super+x mode "power"
 mode "power" {
-#		bindsym l exec i3lock; mode "default"
-#		bindsym s exec i3lock && systemctl suspend; mode "default"
-		bindsym --release l exec slock; mode "default"
-		bindsym --release s exec usleep; mode "default"
-		bindsym c exec i3-msg exit
-		bindsym r exec systemctl reboot
+#	bindsym l exec i3lock; mode "default"
+#	bindsym s exec i3lock && systemctl suspend; mode "default"
+	bindsym --release l exec slock; mode "default"
+	bindsym --release s exec usleep; mode "default"
+	bindsym c exec i3-msg exit
+	bindsym --release r exec systemctl reboot
 
-        # back to normal: Enter or Escape or $mod+o
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+x mode "default"
+    # back to normal: Enter or Escape or $super+o
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $super+x mode "default"
 }
 
 assign [class="Microsoft-edge"] $ws2
@@ -329,8 +320,11 @@ assign [class="Typora"] $ws3
 assign [class="wps"] $ws4
 assign [class="wpp"] $ws4
 
+assign [class="krdc"] $wsRD
 assign [class="thunderbird"] $wsMail
 assign [class="netease-cloud-music-gtk4"] $wsMusic
+
+for_window [class="Thunar"] floating enable
 
 for_window [class="copyq"] floating enable
 for_window [class="copyq"] sticky enable
