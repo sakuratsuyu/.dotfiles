@@ -1,3 +1,3 @@
 function ct
-    /bin/rm -rf ~/.trash_bin/*
+    /bin/rm -rf ~/.trash_bin/.*
 end
