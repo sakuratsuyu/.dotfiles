@@ -270,7 +270,7 @@ bindsym $super+Shift+r restart
 
 
 # Resize window (you can also use the mouse for that)
-bindsym $super+c mode "resize"
+bindsym $super+r mode "resize"
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
 
@@ -288,14 +288,14 @@ mode "resize" {
     # back to normal: Enter or Escape or $super+r
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $super+c mode "default"
+    bindsym $super+r mode "default"
 }
 
 
 # Remote Desktop
-bindsym $super+r mode "remote"
+bindsym $super+c mode "remote"
 mode "remote" {
-    bindsym $super+r mode "default"
+    bindsym $super+c mode "default"
 }
 
 # Power
