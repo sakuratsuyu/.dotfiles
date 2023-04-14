@@ -3,3 +3,4 @@ nvim-lua/tmp
 nvim-lua/plugin
 
 **/__pycache__
+ranger/**/__init__.py
