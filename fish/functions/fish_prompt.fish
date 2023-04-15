@@ -49,17 +49,24 @@ function fish_prompt
     set -l VCS (fish_git_prompt "%s" | sed -E 's/(\x1b\(B)?\x1b\[m//g')
 
     set -l line_length (string match -g -r '[0-9]* ([0-9]*)' (stty size))
-    set -l left_prompt_length (echo 1+(string length $USER)+1+(string length $hostname)+1+1+(string length $pwd)+1 | bc)
-    set -l VCS_length (echo (string length -v $VCS)+1 | bc)
-    set -l space_length (echo $line_length-$left_prompt_length-$VCS_length | bc)
+    set -l icon_length 6
+    set -l left_prompt_length (math $icon_length+1+(string length $USER)+1+(string length $hostname)+1+1+(string length $pwd)+1)
+    set -l space_length (math $line_length-$left_prompt_length)
 
     echo -n (set_color black -b ffe599)" $USER@$hostname "(set_color normal)
     echo -n (set_color black -b $color)" $pwd "(set_color normal)
     if string length -q -- $VCS
-        echo -n (string repeat -n $space_length " ")
-        echo -e "\e[7m$VCS"(set_color normal -b normal)
+        set -l VCS_length (math (string length -v $VCS)+1)
+        set space_length (math $space_length-$VCS_length)
+        if test $space_length -ge 0
+            echo -n (string repeat -n $space_length " ")
+            echo -e "\e[7m$VCS"(set_color normal -b normal)
+        else
+            echo
+        end
     else
         echo
     end
+
     echo -n " $delim↪ "
 end
