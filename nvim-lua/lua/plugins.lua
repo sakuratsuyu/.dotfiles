@@ -197,6 +197,8 @@ local function InitPacker()
     -- TABLE MODE
     use { 'dhruvasagar/vim-table-mode' }
 
+    -- MARKDOWN PREVIEW
+    use({ "iamcco/markdown-preview.nvim", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
     -- VIMTEX
     use { 'lervag/vimtex' }
 
