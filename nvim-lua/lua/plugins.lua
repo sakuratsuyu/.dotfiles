@@ -164,7 +164,7 @@ local function InitPacker()
             "nvim-lua/plenary.nvim", -- Lua development module
         }
     }
---    use { 'nvim-telescope/telescope-file-browser.nvim' }
+    -- use { 'nvim-telescope/telescope-file-browser.nvim' }
 
     -- FLOAT TERMINAL
     use { 'voldikss/vim-floaterm' }
@@ -199,6 +199,7 @@ local function InitPacker()
 
     -- MARKDOWN PREVIEW
     use({ "iamcco/markdown-preview.nvim", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
     -- VIMTEX
     use { 'lervag/vimtex' }
 
