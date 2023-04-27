@@ -1,3 +1,3 @@
 function s --wraps=neofetch --description 'alias s neofetch'
-  neofetch $argv; 
+    neofetch $argv; 
 end
