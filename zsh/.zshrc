@@ -86,6 +86,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    z
     vi-mode
     zsh-autosuggestions
     zsh-completions
@@ -176,10 +177,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 export PAGER=less
 
-source /opt/miniconda3/etc/profile.d/conda.sh
+source /opt/miniconda/etc/profile.d/conda.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.theme.zsh ]] || source ~/.theme.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
