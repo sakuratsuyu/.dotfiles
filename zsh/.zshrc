@@ -140,9 +140,18 @@ unset all_proxy
 unset no_proxy
 '
 
-alias rm="mv ~/.trash_bin/"
-alias lt="ls ~/.trash_bin/"
-alias ct="/bin/rm -rf ~/.trash_bin/*"
+function rm {
+    mv $* ~/.trash_bin/
+}
+function ct {
+    if [[ $(echo $(ls -la ~/.trash_bin/ | wc -l)-$(ls -l ~/.trash_bin/ | wc -l) | bc) -gt 2 ]]; then
+        /bin/rm -rf ~/.trash_bin/.*
+    fi
+    if [[ $(echo $(ls -l ~/.trash_bin/ | wc -l) | bc) -gt 1 ]]; then
+        /bin/rm -rf ~/.trash_bin/*
+    fi
+}
+alias lt="ls -a ~/.trash_bin/"
 
 alias gs="git status"
 alias ga="git add"
