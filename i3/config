@@ -35,7 +35,7 @@ exec_always killall cfw
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill --randomize --no-fehbg ~/Pictures/Wallpaper/*
 exec_always --no-startup-id picom -b --config ~/.config/picom.conf
-exec_always --no-startup-id xmodmap ~/Xmodmap.conf
+exec_always --no-startup-id xmodmap ~/.Xmodmap
 # exec_always --no-startup-id autokey-gtk
 exec_always --no-startup-id thunderbird
 exec_always --no-startup-id goldendict
@@ -51,13 +51,14 @@ exec_always --no-startup-id cfw
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use amixer to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioMicMute exec amixer set Master toggle
-bindsym XF85AudioLowerVolume exec amixer set Master playback 1300-
+bindsym XF86AudioLowerVolume exec amixer set Master playback 1300-
 bindsym XF86AudioRaiseVolume exec amixer set Master playback 1300+
 bindsym $mod+backslash exec amixer set Master toggle
 bindsym $mod+bracketleft exec amixer set Master playback 1300-
@@ -179,9 +180,9 @@ client.background       #ffffff
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 ""
-set $ws2 ""
-set $ws3 ""
-set $ws4 ""
+set $ws2 "󰇩"
+set $ws3 "󰃀"
+set $ws4 "󰈙"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -189,14 +190,13 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-set $wsMail ""
+set $wsMail "󰇮"
 
-# 
-set $wsQQ ""
-set $wsWeChat ""
-set $wsDingTalk ""
-set $wsMusic ""
-set $wsRD ""
+set $wsQQ "󰘅"
+set $wsWeChat "󰘑"
+set $wsDingTalk "󱐋"
+set $wsMusic "󰝚"
+set $wsRD ""
 
 # switch to workspace
 bindsym $super+1 workspace $ws1
