@@ -7,5 +7,5 @@ keymap.set('v', '<M-g>', ':GitGutterLineHighlightsToggle<CR>', opts)
 keymap.set('i', '<M-g>', '<ESC>:GitGutterLineHighlightsToggle<CR>a', opts)
 
 g.gitgutter_map_keys = 0
-keymap.set('n', '[c', '<Plug>GitGutterPrevHunk', opts)
-keymap.set('n', ']c', '<Plug>GitGutterNextHunk', opts)
+keymap.set('n', '[c', '<Plug>(GitGutterPrevHunk)', opts)
+keymap.set('n', ']c', '<Plug>(GitGutterNextHunk)', opts)
