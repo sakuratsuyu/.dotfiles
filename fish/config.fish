@@ -17,6 +17,8 @@ set -g -x PATH /home/sakur/.local/bin $PATH
 
 set -g -x PATH /usr/lib/jvm/java-20-jdk/bin $PATH
 
+set -g -x PATH /home/sakur/.gem/ruby/3.0.0/bin $PATH
+
 # proxy
 
 bind -M default \ce accept-autosuggestion
