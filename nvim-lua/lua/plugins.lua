@@ -205,6 +205,7 @@ local function InitPacker()
 
     -- GIT
     use { 'airblade/vim-gitgutter' }
+    use { 'APZelos/blamer.nvim' }
 
     -- GITHUB COPILOT
     use { 'github/copilot.vim' }
