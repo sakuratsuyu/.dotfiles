@@ -191,8 +191,10 @@ local function InitPacker()
     use { 'kristijanhusak/vim-dadbod-ui', after = 'vim-dadbod' }
     use { 'kristijanhusak/vim-dadbod-completion', after = 'vim-dadbod' }
 
-    -- EASYMOTION
-    use { 'easymotion/vim-easymotion' }
+    -- LEAP
+    -- use { 'easymotion/vim-easymotion' }
+    use { 'ggandor/leap.nvim' }
+    use { 'ggandor/flit.nvim' }
 
     -- TABLE MODE
     use { 'dhruvasagar/vim-table-mode' }

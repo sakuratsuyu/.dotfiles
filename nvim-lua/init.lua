@@ -41,4 +41,4 @@ require('plugins.markdown')
 
 require('plugins.multi-cursor')
 require('plugins.sandwich')
-require('plugins.easymotion')
+require('plugins.leap')

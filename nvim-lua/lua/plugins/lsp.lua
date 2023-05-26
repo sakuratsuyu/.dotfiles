@@ -18,8 +18,6 @@ local on_attach = function(_, bufnr)
     keymap.set('n', 'gi', ':Telescope lsp_implementations<CR>', bufopts)
     keymap.set('n', 'gr', ':Telescope lsp_references<CR>', bufopts)
 
-    keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-
     keymap.set('n', '<LEADER>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     keymap.set('n', '<LEADER>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     keymap.set('n', '<LEADER>wl', function()

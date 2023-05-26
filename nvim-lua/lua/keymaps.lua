@@ -13,6 +13,9 @@ BatchifyKeymap({
     { 'n', '<LEADER><CR>', ':nohlsearch<CR>', opts },
     { 'v', '<LEADER><CR>', ':nohlsearch<CR>', opts },
 
+    { 'n', 'E', 'b', opts },
+    { 'v', 'E', 'b', opts },
+
     -- Repeat Macro
     { 'n', ',', '@q', opts },
     { 'v', ',', '@q', opts },

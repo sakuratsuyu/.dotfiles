@@ -11,7 +11,7 @@ g.loaded_netrwPlugin = 1
 
 -- When to open nvim tree
 local function open_nvim_tree(data)
-    local is_real_file = vim.fn.filereadable(data.file) == 1
+    -- local is_real_file = vim.fn.filereadable(data.file) == 1
     local is_a_directory = vim.fn.isdirectory(data.file) == 1
 
     -- Open nvim tree when open a directory
@@ -162,13 +162,13 @@ require('nvim-tree').setup {
                     symlink_open = '',
                 },
                 git = {
-                    unstaged = 'M',
-                    staged = 'Y✓',
-                    unmerged = 'U',
-                    renamed = 'R',
-                    untracked = 'A',
-                    deleted = 'D',
-                    ignored = 'G◌',
+                    unstaged = '',
+                    staged = '✓',
+                    unmerged = '',
+                    renamed = '',
+                    untracked = '',
+                    deleted = '',
+                    ignored = '',
                 },
             },
         },
