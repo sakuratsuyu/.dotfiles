@@ -26,17 +26,11 @@ BatchifyKeymap({
 
     -- Move line up and down
     { 'n', '<C-S-UP>', ':move .-2<CR>', opts },
-    { 'n', '<C-K>', ':move .-2<CR>', opts },
     { 'n', '<C-S-DOWN>', ':move .+1<CR>', opts },
-    { 'n', '<C-J>', ':move .+1<CR>', opts },
     { 'v', '<C-S-UP>', '<ESC>:move .-2<CR>', opts },
-    { 'v', '<C-K>', ':move .-2<CR>', opts },
     { 'v', '<C-S-DOWN>', '<ESC>:move .+1<CR>', opts },
-    { 'v', '<C-J>', ':move .+1<CR>', opts },
     { 'i', '<C-S-UP>', '<ESC>:move .-2<CR>i', opts },
-    { 'i', '<C-K>', '<ESC>:move .-2<CR>i', opts },
     { 'i', '<C-S-DOWN>', '<ESC>:move .+1<CR>i', opts },
-    { 'i', '<C-J>', '<ESC>:move .+1<CR>i', opts },
 
     -- Save and exit
     { 'n', 'Q', ':q<CR>', opts },
