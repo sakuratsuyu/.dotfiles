@@ -15,10 +15,6 @@ set -g -x PAGER less
 
 set -g -x PATH /home/sakur/.local/bin $PATH
 
-set -g -x PATH /usr/lib/jvm/java-20-jdk/bin $PATH
-
-set -g -x PATH /home/sakur/.gem/ruby/3.0.0/bin $PATH
-
 # proxy
 
 bind -M default \ce accept-autosuggestion
@@ -39,7 +35,5 @@ abbr -a -- gl 'git log --all --graph --decorate'
 abbr -a -- gp 'git pull'
 abbr -a -- gP 'git push'
 abbr -a -- gco 'git checkout'
-abbr -a -- sctl 'systemctl'
-abbr -a -- sctlp 'systemctl status'
-abbr -a -- sctls 'systemctl stop'
-abbr -a -- sctlr 'systemctl restart'
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

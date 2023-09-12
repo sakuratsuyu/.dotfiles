@@ -1,6 +1,6 @@
 function fish_mode_prompt
-    set_color ffffff -b 1793d1
-    echo -n '  '
+    set_color ffffff -b 303640
+    echo -n '  '
     set_color normal -b normal
 
     if test $fish_key_bindings = fish_vi_key_bindings
