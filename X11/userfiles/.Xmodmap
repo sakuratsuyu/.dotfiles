@@ -1,6 +1,0 @@
-clear control
-clear mod1
-clear mod3
-add control = Control_L
-add mod1 = Alt_L
-add mod3 = Control_R
