@@ -54,7 +54,6 @@ local function InitPacker()
                     local result, win, buf = require('packer.util').float({
                         border = 'solid'
                     })
-                    vim.api.nvim_win_set_option(win, 'winhighlight', 'NormalFloat:Normal')
                     return result, win, buf
                 end,
 
@@ -217,7 +216,11 @@ end
 local plugins = setmetatable({}, {
     __index = function(_, key)
         InitPacker()
-        return packer[key]
+        if packer == nil then
+            return nil
+        else
+            return packer[key]
+        end
     end,
 })
 

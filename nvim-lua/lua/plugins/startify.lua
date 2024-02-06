@@ -1,5 +1,5 @@
 local g = vim.g
-local fn = vim.fn
+-- local fn = vim.fn
 
 g.startify_custom_header = "startify#center(split(system('figlet -w 100 neovim'), '\n'))"
 
@@ -30,7 +30,6 @@ g.startify_lists = {
 }
 
 g.startify_bookmarks = {
-    { c = '~/.config/i3/config' },
     { i = '~/.config/nvim' },
     { f = '~/.config/fish' },
 }

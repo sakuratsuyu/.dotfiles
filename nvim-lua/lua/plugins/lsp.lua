@@ -112,40 +112,40 @@ require('lspconfig').cmake.setup {
     }
 }
 
-require('lspconfig').texlab.setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    settings = {
-        texlab = {
-            auxDirectory = ".",
-            bibtexFormatter = "texlab",
-            build = {
-                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
-                executable = "latexmk",
-                forwardSearchAfter = false,
-                onSave = false
-            },
-            chktex = {
-                onEdit = false,
-                onOpenAndSave = false
-            },
-            diagnosticsDelay = 300,
-            formatterLineLength = 80,
-            forwardSearch = {
-                args = {}
-            },
-            latexFormatter = "latexindent",
-            latexindent = {
-                modifyLineBreaks = false
-            }
-        }
-    }
-}
+-- require('lspconfig').texlab.setup {
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     capabilities = capabilities,
+--     settings = {
+--         texlab = {
+--             auxDirectory = ".",
+--             bibtexFormatter = "texlab",
+--             build = {
+--                 args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+--                 executable = "latexmk",
+--                 forwardSearchAfter = false,
+--                 onSave = false
+--             },
+--             chktex = {
+--                 onEdit = false,
+--                 onOpenAndSave = false
+--             },
+--             diagnosticsDelay = 300,
+--             formatterLineLength = 80,
+--             forwardSearch = {
+--                 args = {}
+--             },
+--             latexFormatter = "latexindent",
+--             latexindent = {
+--                 modifyLineBreaks = false
+--             }
+--         }
+--     }
+-- }
 
-require('lspconfig').java_language_server.setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    cmd = { '/home/sakur/.local/share/nvim/mason/packages/java-language-server/dist/lang_server_linux.sh' }
-}
+-- require('lspconfig').java_language_server.setup {
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+--     capabilities = capabilities,
+--     cmd = { '/home/sakur/.local/share/nvim/mason/packages/java-language-server/dist/lang_server_linux.sh' }
+-- }
