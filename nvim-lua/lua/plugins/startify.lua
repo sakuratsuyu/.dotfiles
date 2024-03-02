@@ -30,7 +30,6 @@ g.startify_lists = {
 }
 
 g.startify_bookmarks = {
-    { c = '~/.config/i3/config' },
     { i = '~/.config/nvim' },
     { f = '~/.config/fish' },
 }
