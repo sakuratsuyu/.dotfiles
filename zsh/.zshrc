@@ -73,7 +73,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 export PAGER=less
 
-# source /opt/miniconda/etc/profile.d/conda.sh
+source ~/miniconda3/etc/profile.d/conda.sh
 
 [[ ! -f ~/.theme.zsh ]] || source ~/.theme.zsh
 
