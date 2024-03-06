@@ -18,7 +18,7 @@ font pango: monospace 10
 #font pango:DejaVu Sans Mono 8
 
 # Execute when start i3
-exec_always killall thunderbird
+# exec_always killall thunderbird
 # exec_always killall autokey
 exec_always killall picom
 exec_always killall cbatticon
@@ -37,7 +37,7 @@ exec_always --no-startup-id feh --bg-fill --randomize --no-fehbg ~/Pictures/Wall
 exec_always --no-startup-id picom -b --config ~/.config/picom.conf
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 # exec_always --no-startup-id autokey-gtk
-exec_always --no-startup-id thunderbird
+# exec_always --no-startup-id thunderbird
 exec_always --no-startup-id goldendict
 exec_always --no-startup-id fcitx5 -d
 exec_always --no-startup-id fusuma
@@ -51,8 +51,8 @@ exec_always --no-startup-id cfw
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use amixer to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -89,6 +89,7 @@ bindsym $super+e exec "fish -c 'proxy; thunar'"
 
 # rofi
 bindsym $super+d exec "fish -c 'proxy;rofi -modes drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh -show drun'"
+bindsym $super+space exec "fish -c 'proxy;rofi -modes drun,ssh,layout:~/.config/rofi/layout.sh,toggle:~/.config/rofi/toggle.sh -show drun'"
 bindsym $super+t exec "fish -c 'proxy;rofi -modes toggle:~/.config/rofi/toggle.sh -show toggle'"
 
 # screenshot
