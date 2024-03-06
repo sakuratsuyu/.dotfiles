@@ -7,7 +7,6 @@ require('plugins')
 
 -- TODO
 -- lualine
--- noice.nvim
 -- dashboard-nvim
 -- LuaSnip
 
