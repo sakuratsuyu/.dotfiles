@@ -17,7 +17,7 @@ fi
 
 export PATH=/usr/local/cuda/bin:$PATH
 
-port=8118
+port=7890
 alias proxy='
 export http_proxy="http://127.0.0.1:$port";
 export https_proxy="http://127.0.0.1:$port";
@@ -45,6 +45,7 @@ function ct {
     fi
 }
 alias lt="ls -a ~/.trash_bin/"
+alias lg="lazygit"
 
 alias gs="git status"
 alias ga="git add"
@@ -62,14 +63,14 @@ export PAGER=less
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gid-suiliang/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/sakur/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/gid-suiliang/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gid-suiliang/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/sakur/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/sakur/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/gid-suiliang/miniconda3/bin:$PATH"
+        export PATH="/home/sakur/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
