@@ -33,18 +33,20 @@ unset all_proxy
 unset no_proxy
 '
 
+TRASH_BIN=~/.trash_bin
 function rm {
-    mv $* ~/.trash_bin/
+    mv $* "${TRASH_BIN}"
 }
 function ct {
-    if [[ $(echo $(ls -la ~/.trash_bin/ | wc -l)-$(ls -l ~/.trash_bin/ | wc -l) | bc) -gt 2 ]]; then
-        /bin/rm -rf ~/.trash_bin/.*
+    if [[ $(echo $(ls -la "${TRASH_BIN}" | wc -l)-$(ls -l "${TRASH_BIN}" | wc -l) | bc) -gt 2 ]]; then
+        /bin/rm -rf "${TRASH_BIN}"/.*
     fi
-    if [[ $(echo $(ls -l ~/.trash_bin/ | wc -l) | bc) -gt 1 ]]; then
-        /bin/rm -rf ~/.trash_bin/*
+    if [[ $(echo $(ls -l "${TRASH_BIN}" | wc -l) | bc) -gt 1 ]]; then
+        /bin/rm -rf "${TRASH_BIN}"/*
     fi
 }
-alias lt="ls -a ~/.trash_bin/"
+alias lt="ls -a ${TRASH_BIN}"
+
 alias lg="lazygit"
 
 alias gs="git status"
