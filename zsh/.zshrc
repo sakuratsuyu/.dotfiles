@@ -33,15 +33,15 @@ unset all_proxy
 unset no_proxy
 '
 
-TRASH_BIN=~/.trash_bin
+export TRASH_BIN=~/.trash_bin
 function rm {
     mv $* "${TRASH_BIN}"
 }
 function ct {
-    if [[ $(echo $(ls -la "${TRASH_BIN}" | wc -l)-$(ls -l "${TRASH_BIN}" | wc -l) | bc) -gt 2 ]]; then
+    if [[ $(echo $(ls -a "${TRASH_BIN}" | wc -l)-$(ls "${TRASH_BIN}" | wc -l) | bc) -gt 2 ]]; then
         /bin/rm -rf "${TRASH_BIN}"/.*
     fi
-    if [[ $(echo $(ls -l "${TRASH_BIN}" | wc -l) | bc) -gt 1 ]]; then
+    if [[ $(echo $(ls "${TRASH_BIN}" | wc -l) | bc) -gt 0 ]]; then
         /bin/rm -rf "${TRASH_BIN}"/*
     fi
 }
